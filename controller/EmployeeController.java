@@ -30,13 +30,14 @@ public class EmployeeController {
 
     @GetMapping("/employees")
     public ResponseEntity<List<Employee>> getAllEmp() {
-        System.out.println("controller methods");
+        System.out.println("controller  get method");
         List<Employee> employees = employeeService.getAllEmployees();
         return ResponseEntity.ok(employees);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Employee> getEmpById(@PathVariable("id") String id){
+        System.out.println("controller  get methods by idf");
        Employee byId= employeeService.getEmployee(id);
         return ResponseEntity.ok(byId);
     }
